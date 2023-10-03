@@ -1,5 +1,5 @@
 # HAI_TechnicalTest
-This project was built for the purpose completing HAI technical test
+This project was built for the purpose of completing HAI technical test
 
 # About this project
 
