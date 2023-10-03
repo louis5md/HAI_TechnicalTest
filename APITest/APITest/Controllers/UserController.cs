@@ -47,7 +47,16 @@ namespace APITest.Controller
             resultDto.data = null;
             return resultDto;
         }
-        
+
+        [HttpPost("delete")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<ResultDto> delete()
+        {
+            var token = HttpContext.Request.Headers[HeaderNames.Authorization];
+            RequestHandlerAsync<UserDto> requestHandler = new RequestHandlerAsync<UserDto>();
+            return await requestHandler.getResultAsync(() => _userService.deleteUser(token));
+        }
+
         [HttpPost("list")]
         public async Task<ResultDto> getSimilarUsers([FromBody] string email)
         {
