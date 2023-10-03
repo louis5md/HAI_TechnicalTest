@@ -21,6 +21,7 @@ Projek ini membangun API Services, menggunakan C# dengan asp.net core framework.
 1. Login
 
 route:/user/login
+
 Body:
 {
   "email": "string",
@@ -34,7 +35,9 @@ Setiap kali login berhasil, akan dikembalikan data user (kecuali password) denga
 2. Logout
 
 route:/user/logout
+
 Body:
+
 Header: 
 Authorization : "string"   => berisi token
 
@@ -44,6 +47,7 @@ dikarenakan waktu yang lebih dari 15 menit akan otomatis membuat token tidak lag
 3. Create User
 
 route:/user/register
+
 body:
 {
   "name": "string",
@@ -56,6 +60,7 @@ Untuk implementasi create user, dilakukan dengan terlebih dahulu memeriksa email
 4. update user & update passowrd user
 
 route:/user/update
+
 body:
 {
   "name": "string",
@@ -70,7 +75,9 @@ untuk implementasi update user dan update password user dilakukan pada 1 route y
 5. Delete user
 
 route:/user/delete/
+
 body:
+
 header:
 Authorization: "string"  =>berisi token
 
@@ -79,6 +86,7 @@ Untuk implementasi delete user, dilakukan dengan cara melakukan verifikasi denga
 6. Get list user dengan filter email
 
 route:/user/list
+
 body:
 {
   "email": "string"
